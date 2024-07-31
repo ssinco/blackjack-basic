@@ -10,6 +10,7 @@ const getUser = () => {
 };
 
 const signup = async (formData) => {
+  console.log('form',formData)
   try {
     const res = await fetch(`${BACKEND_URL}/users/signup`, {
       method: 'POST',

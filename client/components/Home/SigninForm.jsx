@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-// import * as authService from '../../services/authService';
+import * as authService from '../../services/authService';
 
 const SigninForm = (props) => {
   const navigate = useNavigate();
@@ -23,9 +23,9 @@ const SigninForm = (props) => {
     e.preventDefault();
     try {
       const user = await authService.signin(formData);
-      // console.log(user);
+      console.log(user);
       props.setUser(user);
-      navigate('/dashboard');
+      navigate('/game/basic-strategy');
     } catch (err) {
       updateMessage(err.message);
     }

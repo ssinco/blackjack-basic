@@ -33,11 +33,6 @@ function Home(props) {
         // console.log(loginForm)
     }
     
-    // const handleSignout = () => {
-    //   authService.signout();
-    //   setUser(null);
-    // };
-    
     // const navigate = useNavigate();
   
     // console.log(props)

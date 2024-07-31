@@ -23,8 +23,9 @@ const SignupForm = (props) => {
     e.preventDefault();
     try {
       const newUserResponse = await authService.signup(formData);
+      // console.log(newUserResponse)
       props.setUser(newUserResponse.user);
-      navigate('/dashboard');
+      navigate('/game/basic-strategy');
     } catch (err) {
       updateMessage(err.message);
     }

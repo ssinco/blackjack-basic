@@ -17,6 +17,7 @@ const SALT_LENGTH = 12;
 router.post('/signup', async (req, res) => {
     try {
         // Check if the username is already taken
+        // console.log(req.body)
         const userInDatabase = await User.findOne({ username: req.body.username });
         if (userInDatabase) {
             return res.json({ error: 'Username already taken.' });
@@ -35,6 +36,7 @@ router.post('/signup', async (req, res) => {
         res.status(400).json({ error: error.message });
     }
 });
+
 
 router.post('/signin', async (req, res) => {
     try {

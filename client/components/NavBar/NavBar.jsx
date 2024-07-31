@@ -1,19 +1,18 @@
 import { Link } from 'react-router-dom';
-// import { AuthedUserContext } from '../../App';
-// import { useContext } from 'react';
+import { AuthedUserContext } from '../../App';
+import { useContext } from 'react';
 import styles from "./NavBar.module.css";
 
 const NavBar = ({ handleSignout }) => {
-//   const user = useContext(AuthedUserContext);
+  const user = useContext(AuthedUserContext);
 
   return (
     <div className={styles.navContainer}>
       <nav>
-        {/* <div className={styles.navLeft}>
+        <div className={styles.navLeft}>
           <p>LOGO</p>
         </div>
         
-
         {user ? (
           <div className={styles.navRight}>
             <div className={styles.userInfo}>
@@ -21,11 +20,7 @@ const NavBar = ({ handleSignout }) => {
               <h4>{user.username}</h4>
             </div>
             <ul>
-
-              <li><Link to="/game/count-single">Single Card</Link></li>
-              <li><Link to="/game/count-snapshot">Snapshot</Link></li>
               <li><Link to="/game/basic-strategy">Basic Strategy</Link></li>
-              <li><Link to='/game/blackjack'>Full Game</Link></li>
               <li><Link to='' onClick={handleSignout}>Sign Out</Link></li>
             </ul>
           </div>
@@ -34,9 +29,7 @@ const NavBar = ({ handleSignout }) => {
             <li>No links atm</li>
             <li>No links atm</li>
           </ul>
-        )} */}
-        <li>No links atm</li>
-        <li>No links atm</li>
+        )}
       </nav>
     </div>
   );
